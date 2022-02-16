@@ -6,6 +6,8 @@ void main()
 	Dictionary<const char*, int> test = Dictionary<const char*, int>();
 	Dictionary<const char*, int> test2 = Dictionary<const char*, int>();
 
+	int z = test["no"];
+
 	test.addItem("yes", 1);
 	test.addItem("house", 20);
 	test.addItem("dog", 30);

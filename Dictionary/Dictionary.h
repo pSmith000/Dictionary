@@ -3,8 +3,6 @@
 template<typename TKey, typename TValue>
 class Dictionary
 {
-	
-
 public:
 	/// <summary>
 	/// Sets the dictionary to have base items and values
@@ -87,10 +85,9 @@ public:
 	/// <summary>
 	/// The overload of the bracket operator
 	/// </summary>
-	/// <param name="key"></param>
-	/// <returns></returns>
+	/// <param name="key">the key to search for</param>
+	/// <returns>the value connected to the key</returns>
 	TValue operator [](const TKey key);
-
 
 private:
 	/// <summary>
@@ -101,11 +98,9 @@ private:
 		TKey itemKey;
 		TValue itemValue;
 	};
-
 	//The items and the count of the items in the dictionary
 	Item* m_items = nullptr;
 	int m_count = 0;
-	
 };
 
 template<typename TKey, typename TValue>
@@ -125,9 +120,7 @@ inline Dictionary<TKey, TValue>::Dictionary(const Dictionary<TKey, TValue>& othe
 }
 
 template<typename TKey, typename TValue>
-inline Dictionary<TKey, TValue>::~Dictionary()
-{
-}
+inline Dictionary<TKey, TValue>::~Dictionary(){}
 
 template<typename TKey, typename TValue>
 inline void Dictionary<TKey, TValue>::clear()
@@ -305,13 +298,16 @@ inline const Dictionary<TKey, TValue>& Dictionary<TKey, TValue>::operator=(const
 template<typename TKey, typename TValue>
 inline TValue Dictionary<TKey, TValue>::operator[](const TKey key)
 {
+	//For the length of the dictionary
 	for (int i = 0; i < getCount(); i++)
 	{
+		//If the key is found
 		if (m_items[i].itemKey == key)
 		{
+			//return the value associated with it
 			return m_items[i].itemValue;
 		}
 	}
-
-	return NULL;
+	//Else, return the default value
+	return TValue();
 }
