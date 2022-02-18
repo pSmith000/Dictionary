@@ -3,26 +3,22 @@
 
 void main()
 {
+	//creat a new dictionary
 	Dictionary<const char*, int> test = Dictionary<const char*, int>();
 
-	int z = test["no"];
-
+	//Add items to Dictionary
 	test.addItem("yes", 1);
 	test.addItem("house", 20);
 	test.addItem("dog", 30);
 
+	//Test the constructor
 	Dictionary<const char*, int> test2 = Dictionary<const char*, int>(test);
 
-	
-	int x = test["house"];
-
-	
-	//test2 = test;
-	//test2.remove("house");
+	//Sets a variable to be the data to see if the constructor worked
 	int y = test2["house"];
 	test.clear();
-	//test2.tryGetValue(50, x);
 
+	//If the constructor worked print 
 	if (test2.containsValue(1))
 		std::cout << "It's here " << y;
 
