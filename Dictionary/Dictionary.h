@@ -114,9 +114,17 @@ inline Dictionary<TKey, TValue>::Dictionary()
 template<typename TKey, typename TValue>
 inline Dictionary<TKey, TValue>::Dictionary(const Dictionary<TKey, TValue>& other)
 {
-	//sets the variables to be that of the other dictionary
-	m_items = other.m_items;
-	m_count = other.m_count;
+	//clears the dictionary
+	clear();
+
+	//for the lengtth of the other dictionarys items
+	for (int i = 0; i < other.getCount(); i++)
+	{
+		//copy the items from the other dictionary to the current one
+		addItem(other.m_items[i].itemKey, other.m_items[i].itemValue);
+	}
+	//set the count to the other count
+	m_count = other.getCount();
 }
 
 template<typename TKey, typename TValue>
