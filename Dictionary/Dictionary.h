@@ -40,7 +40,7 @@ public:
 	bool containsValue(const TValue object) const;
 
 	/// <summary>
-	/// tries to find the item that matches the given key
+	/// tries to find the item that matches the given key and changes the value to be the value inputed
 	/// </summary>
 	/// <param name="key">the key to check for</param>
 	/// <param name="value">the value is chenged to the value asociated with the item</param>
