@@ -135,6 +135,7 @@ inline void Dictionary<TKey, TValue>::clear()
 {
 	//Deletes the items to clear the dictionary
 	delete m_items;
+	m_items = nullptr;
 	m_count = 0;
 }
 
